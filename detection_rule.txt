@@ -1,0 +1,26 @@
+
+
+title: Vulnerability Scanner and Path Traversal Activity
+id: 8a7b6c5d-4e3f-2a1b-0c9d-8e7f6a5b4c3d
+status: experimental
+description: Detects activity associated with known vulnerability scanners and path traversal attempts based on User-Agent and URI patterns.
+logsource:
+    product: webserver
+    service: access
+detection:
+    scanner_ua:
+        - http.user_agent|contains:
+            - 'sqlmap'
+            - 'Nikto'
+            - 'masscan'
+    attack_patterns:
+        - url.path|contains:
+            - '../'
+            - '/etc/passwd'
+            - '/phpmyadmin'
+            - '/wp-login'
+            - '/admin/config'
+    condition: scanner_ua or attack_patterns
+falsepositives:
+    - Authorized security testing
+level: high

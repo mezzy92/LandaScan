@@ -1,0 +1,152 @@
+[
+  {
+    "line": "192.0.2.129 - - [25/Jul/2026:08:00:00 +0000] \"GET /favicon.ico HTTP/1.1\" 200 4614 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0\"",
+    "label": "BENIGN",
+    "severity": 1,
+    "reason": "The log entry represents a standard browser request for a favicon with a successful status code and no malicious indicators."
+  },
+  {
+    "line": "192.0.2.66 - - [25/Jul/2026:08:00:11 +0000] \"GET /index.html HTTP/1.1\" 200 4012 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0\"",
+    "label": "BENIGN",
+    "severity": 1,
+    "reason": "This is a standard HTTP GET request for a static resource returning a successful 200 status code with no malicious indicators."
+  },
+  {
+    "line": "192.0.2.43 - - [25/Jul/2026:08:00:39 +0000] \"GET /phpmyadmin/ HTTP/1.1\" 401 50 \"-\" \"sqlmap/1.7\"",
+    "label": "MALICIOUS",
+    "severity": 4,
+    "reason": "The presence of the sqlmap user-agent targeting a phpMyAdmin endpoint indicates an automated SQL injection attack attempt."
+  },
+  {
+    "line": "10.0.0.222 - - [25/Jul/2026:08:01:46 +0000] \"GET /index.html HTTP/1.1\" 200 3589 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0\"",
+    "label": "BENIGN",
+    "severity": 1,
+    "reason": "The log shows a standard successful HTTP GET request for the homepage with a legitimate browser user agent."
+  },
+  {
+    "line": "10.0.0.175 - - [25/Jul/2026:08:02:35 +0000] \"GET /static/app.js HTTP/1.1\" 404 2706 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0\"",
+    "label": "BENIGN",
+    "severity": 1,
+    "reason": "The log shows a routine request for a missing static file resulting in a 404 status code with no indicators of malicious activity."
+  },
+  {
+    "line": "203.0.113.99 - - [25/Jul/2026:08:03:44 +0000] \"GET /products?page=2 HTTP/1.1\" 404 2943 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0\"",
+    "label": "BENIGN",
+    "severity": 1,
+    "reason": "Normal pagination request returning a 404 status code with no malicious indicators."
+  },
+  {
+    "line": "10.0.0.254 - - [25/Jul/2026:08:04:46 +0000] \"POST /api/login HTTP/1.1\" 200 4244 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0\"",
+    "label": "BENIGN",
+    "severity": 1,
+    "reason": "This is a standard successful login request from an internal IP address with no indicators of compromise."
+  },
+  {
+    "line": "192.0.2.68 - - [25/Jul/2026:08:05:26 +0000] \"GET /favicon.ico HTTP/1.1\" 404 4487 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0\"",
+    "label": "BENIGN",
+    "severity": 1,
+    "reason": "This is a standard browser request for a favicon resulting in a 404 error, which is common and non-malicious."
+  },
+  {
+    "line": "192.0.2.52 - - [25/Jul/2026:08:05:30 +0000] \"GET /static/app.js HTTP/1.1\" 200 4162 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0\"",
+    "label": "BENIGN",
+    "severity": 1,
+    "reason": "The request is a standard retrieval of a static JavaScript file with a valid 200 response and normal browser user-agent."
+  },
+  {
+    "line": "198.51.100.36 - - [25/Jul/2026:08:05:39 +0000] \"GET /phpmyadmin/ HTTP/1.1\" 404 727 \"-\" \"sqlmap/1.7\"",
+    "label": "MALICIOUS",
+    "severity": 4,
+    "reason": "The request uses the sqlmap user-agent, indicating an automated SQL injection attack attempt against a sensitive phpMyAdmin endpoint."
+  },
+  {
+    "line": "198.51.100.210 - - [25/Jul/2026:08:06:00 +0000] \"GET /../../../../etc/passwd HTTP/1.1\" 403 118 \"-\" \"masscan/1.3\"",
+    "label": "MALICIOUS",
+    "severity": 4,
+    "reason": "The log shows a blocked HTTP GET request containing path traversal sequences targeting the /etc/passwd file."
+  },
+  {
+    "line": "192.0.2.181 - - [25/Jul/2026:08:06:11 +0000] \"GET /wp-login.php HTTP/1.1\" 403 337 \"-\" \"Nikto/2.5\"",
+    "label": "MALICIOUS",
+    "severity": 3,
+    "reason": "The request uses the Nikto vulnerability scanner to probe a WordPress login page, indicating an active attack attempt."
+  },
+  {
+    "line": "10.0.0.102 - - [25/Jul/2026:08:06:51 +0000] \"GET /products?page=2 HTTP/1.1\" 404 3412 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0\"",
+    "label": "BENIGN",
+    "severity": 1,
+    "reason": "Normal web traffic requesting a paginated product page with no malicious indicators."
+  },
+  {
+    "line": "203.0.113.250 - - [25/Jul/2026:08:07:28 +0000] \"GET /admin/config.php HTTP/1.1\" 500 444 \"-\" \"sqlmap/1.7\"",
+    "label": "MALICIOUS",
+    "severity": 4,
+    "reason": "The user-agent string identifies sqlmap, which is a known tool for automated SQL injection attacks."
+  },
+  {
+    "line": "10.0.0.96 - - [25/Jul/2026:08:07:32 +0000] \"GET /favicon.ico HTTP/1.1\" 200 383 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0\"",
+    "label": "BENIGN",
+    "severity": 1,
+    "reason": "This is a standard HTTP GET request for a website favicon returning a successful 200 status code with a legitimate user agent."
+  },
+  {
+    "line": "192.0.2.215 - - [25/Jul/2026:08:08:59 +0000] \"GET /about HTTP/1.1\" 404 2802 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0\"",
+    "label": "BENIGN",
+    "severity": 1,
+    "reason": "This is a standard HTTP GET request for a common page resulting in a 404 error with no malicious indicators."
+  },
+  {
+    "line": "203.0.113.189 - - [25/Jul/2026:08:09:16 +0000] \"GET /api/health HTTP/1.1\" 404 3019 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0\"",
+    "label": "BENIGN",
+    "severity": 1,
+    "reason": "This is a standard health check request resulting in a 404 error with no indicators of malicious activity."
+  },
+  {
+    "line": "10.0.0.246 - - [25/Jul/2026:08:10:46 +0000] \"GET /favicon.ico HTTP/1.1\" 404 3513 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0\"",
+    "label": "BENIGN",
+    "severity": 1,
+    "reason": "This is a standard browser request for a missing favicon icon from an internal IP address."
+  },
+  {
+    "line": "198.51.100.204 - - [25/Jul/2026:08:12:09 +0000] \"POST /api/login HTTP/1.1\" 200 1734 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0\"",
+    "label": "BENIGN",
+    "severity": 1,
+    "reason": "This entry represents a standard successful login request with a common browser user-agent and no observable attack patterns."
+  },
+  {
+    "line": "10.0.0.68 - - [25/Jul/2026:08:12:23 +0000] \"GET /index.html HTTP/1.1\" 200 4211 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0\"",
+    "label": "BENIGN",
+    "severity": 1,
+    "reason": "Normal web traffic accessing the root index page with no indicators of malicious activity."
+  },
+  {
+    "line": "203.0.113.63 - - [25/Jul/2026:08:13:36 +0000] \"GET /products?page=2 HTTP/1.1\" 200 859 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0\"",
+    "label": "BENIGN",
+    "severity": 1,
+    "reason": "This is a standard HTTP GET request for a product page with a 200 OK status and no signs of exploitation."
+  },
+  {
+    "line": "10.0.0.105 - - [25/Jul/2026:08:13:58 +0000] \"GET /favicon.ico HTTP/1.1\" 200 3271 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0\"",
+    "label": "BENIGN",
+    "severity": 1,
+    "reason": "Standard browser request for a favicon.ico file with a successful 200 response indicates normal web traffic."
+  },
+  {
+    "line": "192.0.2.50 - - [25/Jul/2026:08:15:28 +0000] \"GET / HTTP/1.1\" 200 2797 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0\"",
+    "label": "BENIGN",
+    "severity": 1,
+    "reason": "This is a standard HTTP GET request to the root path with a successful response code and a legitimate browser user-agent."
+  },
+  {
+    "line": "203.0.113.69 - - [25/Jul/2026:08:15:43 +0000] \"GET /../../../../etc/passwd HTTP/1.1\" 200 262 \"-\" \"python-requests/2.31\"",
+    "label": "MALICIOUS",
+    "severity": 5,
+    "reason": "The log entry indicates a successful directory traversal attack targeting /etc/passwd, evidenced by the path traversal payload and a 200 OK status code."
+  },
+  {
+    "line": "10.0.0.72 - - [25/Jul/2026:08:17:08 +0000] \"GET / HTTP/1.1\" 404 1790 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0\"",
+    "label": "BENIGN",
+    "severity": 1,
+    "reason": "Normal HTTP GET request to root directory resulting in a 404 error from an internal IP address."
+  }
+]
